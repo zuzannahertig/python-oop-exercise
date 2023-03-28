@@ -42,16 +42,18 @@ class Workshop():
         if participant.__class__.__name__ == 'Student':
             self.students.append(participant)
 
-    def print_details(self):
+    def print_workshop(self):
         print('=>')
         print(f'Workshop - {self.date} - {self.subject}\n')
 
+    def print_students(self):
         print('Students')
         idx = 1
         for s in self.students:
             print(f'{idx}. {s.full_name} - {s.reason}')
             idx += 1
 
+    def print_instructors(self):
         print('\nInstructors')
         idx = 1
         for i in self.instructors:
@@ -64,6 +66,11 @@ class Workshop():
             print(f'{idx}. {i.full_name} - {skills}')
             print(f'\t{i.bio}')
             idx += 1
+
+    def print_details(self):
+        self.print_workshop()
+        self.print_students()
+        self.print_instructors()
 
 
 workshop = Workshop("12/03/2014", "Shutl")
